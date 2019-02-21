@@ -21,7 +21,8 @@ app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(morgan('dev')); //dev/combined/tiny
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: false})); // Basic data incoming
+app.use(express.json()); // Acept json format
 
 // Global variables
 
