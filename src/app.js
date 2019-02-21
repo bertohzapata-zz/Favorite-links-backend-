@@ -36,7 +36,7 @@ app.use('links', require('./routes/links'));
 
 
 // Public
-app.use(static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Starting server
 app.listen(app.get('port'), () => {
