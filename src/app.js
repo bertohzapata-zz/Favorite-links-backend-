@@ -14,6 +14,9 @@ app.use(morgan('dev')); //dev/combined/tiny
 
 
 // Routes
+app.use('/', (req, res) => {
+    res.json({texto: ' Hola mundo'});
+});
 
 
 // Public
