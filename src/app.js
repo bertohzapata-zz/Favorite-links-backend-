@@ -25,13 +25,18 @@ app.use(express.urlencoded({extended: false})); // Basic data incoming
 app.use(express.json()); // Acept json format
 
 // Global variables
-
+app.use((req, res, next) => {
+    next();
+});
 
 // Routes
 app.use(require('./routes'));
+app.use(require('./routes/auth'));
+app.use('links', require('./routes/links'));
 
 
 // Public
+app.use(static(path.join(__dirname, 'public')));
 
 // Starting server
 app.listen(app.get('port'), () => {
